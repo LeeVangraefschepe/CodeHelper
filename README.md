@@ -3,6 +3,8 @@ Code helper is a basic windows form that helps you convert data from your clipbo
 ## Rule of 5
 Bored of writing these all the time after creating your class?
 ```cpp
+ExampleClass() = default;
+~ExampleClass() = default;
 ExampleClass(const ExampleClass& other) = delete;
 ExampleClass(ExampleClass&& other) = delete;
 ExampleClass& operator=(const ExampleClass& other) = delete;
