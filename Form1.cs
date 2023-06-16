@@ -36,11 +36,12 @@ namespace CodeHelper
                         string className = Clipboard.GetText();
                         if (className.Contains("operator")) { continue; }
                         string ruleOf5 = string.Empty;
+                        ruleOf5 += $"{className}() = default;\n";
+                        ruleOf5 += $"~{className}() = default;\n";
                         ruleOf5 += $"{className}(const {className}& other) = delete;\n";
                         ruleOf5 += $"{className}({className}&& other) = delete;\n";
                         ruleOf5 += $"{className}& operator=(const {className}& other) = delete;\n";
                         ruleOf5 += $"{className}& operator=({className}&& other) = delete;";
-                        Console.WriteLine(ruleOf5);
                         Clipboard.SetText(ruleOf5);
                     }
                 }
